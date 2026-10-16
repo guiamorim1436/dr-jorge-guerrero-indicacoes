@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getPublicConfig } from "@/lib/api";
-import logoLocal from "@/assets/logo-clinica-vasques.png";
+import logoLocal from "@/assets/logo-jorge-guerrero.png";
 
 export function Logo({ to = "/" }: { to?: string }) {
   const { data } = useQuery({
@@ -10,7 +10,7 @@ export function Logo({ to = "/" }: { to?: string }) {
     staleTime: 1000 * 60 * 5,
   });
 
-  const nome = data?.nome_plataforma || "Clínica Vasques";
+  const nome = data?.nome_plataforma || "Dr. Jorge Guerrero";
   const logoUrl = data?.logo_url || logoLocal;
 
   return (
