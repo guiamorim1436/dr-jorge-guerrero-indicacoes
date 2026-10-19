@@ -115,14 +115,14 @@ async function handle(action: string, payload: any, admin: any) {
     case "salvarConfigKommo": {
       const { error } = await admin.from("configuracoes_kommo").upsert({
         id: 1,
-        subdomain: payload.subdomain,
-        bearer_token: payload.bearer_token,
-        pipeline_id: payload.pipeline_id,
-        stage_id: payload.stage_id,
-        whatsapp_clinica: payload.whatsapp_clinica,
-        whatsapp_mensagem: payload.whatsapp_mensagem,
-        nome_plataforma: payload.nome_plataforma,
-        logo_url: payload.logo_url,
+        subdomain: payload.subdomain?.trim() ? payload.subdomain.trim() : null,
+        bearer_token: payload.bearer_token?.trim() ? payload.bearer_token.trim() : null,
+        pipeline_id: payload.pipeline_id ? Number(payload.pipeline_id) : null,
+        stage_id: payload.stage_id ? Number(payload.stage_id) : null,
+        whatsapp_clinica: payload.whatsapp_clinica?.trim() ? payload.whatsapp_clinica.trim() : null,
+        whatsapp_mensagem: payload.whatsapp_mensagem ?? null,
+        nome_plataforma: payload.nome_plataforma ?? null,
+        logo_url: payload.logo_url ?? null,
         updated_at: new Date().toISOString(),
       }, { onConflict: "id" });
       if (error) throw new Error(error.message);

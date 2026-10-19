@@ -114,12 +114,12 @@ export const getConfigKommo = () =>
   } | null>("getConfigKommo");
 
 export const salvarConfigKommo = (data: {
-  subdomain: string;
-  bearer_token: string;
-  pipeline_id: number | null;
-  stage_id: number | null;
-  whatsapp_clinica: string | null;
-  whatsapp_mensagem: string | null;
+  subdomain?: string | null;
+  bearer_token?: string | null;
+  pipeline_id?: number | null;
+  stage_id?: number | null;
+  whatsapp_clinica?: string | null;
+  whatsapp_mensagem?: string | null;
   nome_plataforma?: string;
   logo_url?: string | null;
 }) => callAdmin<{ ok: true }>("salvarConfigKommo", data);

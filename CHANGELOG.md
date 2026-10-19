@@ -4,6 +4,13 @@ Todas as alterações notáveis deste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.2.0] - 2026-10-19
+### Modificado
+- **Campos do Kommo Opcionais (`AdminConfiguracoes`)**:
+  - Removida a obrigatoriedade dos campos de Subdomínio e Bearer Token do Kommo CRM.
+  - Clínicas que não utilizam o Kommo agora conseguem salvar normalmente o WhatsApp da clínica, mensagem personalizada de redirecionamento, nome da plataforma e logotipo.
+  - `admin-api` atualizado para tratar dados do Kommo como opcionais/nulos com segurança.
+
 ---
 
 ## [1.1.0] - 2026-10-16

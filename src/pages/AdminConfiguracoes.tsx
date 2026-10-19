@@ -112,15 +112,21 @@ export default function AdminConfiguracoes() {
           </div>
         </div>
 
-        <h2 className="text-lg font-medium text-primary/80 pt-2">Integração Kommo</h2>
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-medium text-primary/80 pt-2">Integração Kommo CRM</h2>
+            <span className="text-xs text-muted-foreground">(Opcional)</span>
+          </div>
+          <p className="text-xs text-muted-foreground">Preencha apenas se a clínica utilizar o Kommo CRM para sincronizar leads.</p>
+        </div>
         <div className="space-y-2">
           <Label>Subdomínio</Label>
-          <Input value={subdomain} onChange={(e) => setSubdomain(e.target.value)} placeholder="minhaclinica" required />
+          <Input value={subdomain} onChange={(e) => setSubdomain(e.target.value)} placeholder="minhaclinica" />
           <p className="text-xs text-muted-foreground">https://<strong>{subdomain || "subdominio"}</strong>.kommo.com</p>
         </div>
         <div className="space-y-2">
           <Label>Bearer Token (long-lived)</Label>
-          <Input value={token} onChange={(e) => setToken(e.target.value)} type="password" required />
+          <Input value={token} onChange={(e) => setToken(e.target.value)} type="password" placeholder="Cole o token apenas se usar Kommo" />
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-2">
