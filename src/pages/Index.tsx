@@ -16,16 +16,24 @@ export default function Index() {
   return (
     <PageShell>
       <section className="space-y-6 text-center">
-        <h1 className="text-4xl md:text-5xl text-primary">
-          Cuidado e confiança, <em className="italic text-gold">compartilhados</em>.
-        </h1>
-        <p className="text-muted-foreground text-base md:text-lg max-w-md mx-auto">
-          Indique amigos e familiares para nosso programa de recomendação e seja recompensado pela sua confiança.
-
+        <p className="text-xs uppercase tracking-widest text-gold font-medium">
+          Programa de Indicações
         </p>
+        <h1 className="text-4xl md:text-5xl text-primary">
+          Sua confiança merece ser{" "}
+          <em className="italic text-gold">recompensada.</em>
+        </h1>
+        <div className="space-y-4 text-muted-foreground text-base md:text-lg max-w-lg mx-auto">
+          <p>
+            Compartilhe com pessoas especiais a experiência de cuidado que você conhece e transforme suas indicações em benefícios exclusivos.
+          </p>
+          <p className="text-foreground/90 font-normal">
+            A cada indicação que realizar uma consulta, você já começa a acumular pontos!
+          </p>
+        </div>
         <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-          <Button asChild size="lg"><Link to="/indicar">Quero indicar</Link></Button>
-          <Button asChild size="lg" variant="ghost"><Link to="/entrar">Já indico — acessar painel</Link></Button>
+          <Button asChild size="lg"><Link to="/indicar">Quero participar</Link></Button>
+          <Button asChild size="lg" variant="ghost"><Link to="/entrar">Acessar Painel</Link></Button>
         </div>
       </section>
 
